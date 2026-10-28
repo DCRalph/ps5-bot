@@ -5,7 +5,7 @@ import { z } from "zod";
 const Env = z.object({
   ATMOS_API_KEY: z.string().startsWith("atmos_"),
   ATMOS_URL: z.url().default("https://atmosmedia.co.nz"),
-  ATMOS_USER_ID: z.string().min(1).default("MC6FIGZYN7DOhlYaGmORFEyH2kmL1byf"),
+  ATMOS_USER_ID: z.string().min(1),
 });
 
 export const loadNotifyConfig = () => Env.parse(process.env);
