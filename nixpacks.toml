@@ -1,0 +1,4 @@
+# Dokploy's default builder. curl does the retailer requests (see `get` in
+# src/retailers.ts); the Dockerfile installs it too.
+[phases.setup]
+aptPkgs = ["...", "curl"]

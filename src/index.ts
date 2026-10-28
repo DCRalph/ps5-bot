@@ -36,6 +36,7 @@ if (process.argv.includes("--once")) {
 }
 
 const config = loadNotifyConfig();
+if (!Bun.which("curl")) throw new Error("curl is not installed. Every retailer check needs it.");
 
 if (process.argv.includes("--test-notify")) {
   await notify(config, { title: "PS5 Pro watch", message: "Test notification. The bot can reach you.", priority: 3 });
